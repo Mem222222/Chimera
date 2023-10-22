@@ -7,7 +7,11 @@ public class SceneController : MonoBehaviour
 {
     public int DisScene = 1;
     public void SwitchScene()
+    {   StartCoroutine(DelayedAction());
+    }
+    IEnumerator DelayedAction()
     {
+        yield return new WaitForSeconds(1.25f);
         SceneManager.LoadScene(DisScene);
     }
     void Update()
