@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-    // definitions
+    // Definitions
     public float moveSpeed = 5.0f;
 
     private Rigidbody2D rb;
-
 
     // Start is called before the first frame update
     void Start()
@@ -20,13 +19,13 @@ public class NewBehaviourScript : MonoBehaviour
     void FixedUpdate()
     {
         // Get input for movement (WASD or arrow keys)
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
+        float dirX = Input.GetAxis("Horizontal");
+        float dirY = Input.GetAxis("Vertical");
 
         // Calculate movement direction
-        Vector2 moveDirection = new Vector2(horizontalInput, verticalInput).normalized;
+        Vector2 dir = new Vector2(dirX, dirY);
 
         // Apply movement
-        rb.velocity = moveDirection * moveSpeed;
+        rb.velocity = dir * moveSpeed;
     }
 }
