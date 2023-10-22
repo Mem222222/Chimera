@@ -11,7 +11,7 @@ public class SceneController : MonoBehaviour
     }
     IEnumerator DelayedAction()
     {
-        yield return new WaitForSeconds(1.25f);
+        yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(DisScene);
     }
     void Update()
