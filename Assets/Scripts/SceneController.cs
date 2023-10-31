@@ -24,6 +24,10 @@ public class SceneController : MonoBehaviour
         {
             SceneManager.LoadScene(2);
         }
+        if (Input.GetKeyDown(KeyCode.C)) //Test key for death screen
+        {
+            SceneManager.LoadScene(3);
+        }
     }
 
 }
