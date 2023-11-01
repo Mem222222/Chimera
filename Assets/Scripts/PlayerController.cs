@@ -18,14 +18,16 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        // Get input for movement (WASD or arrow keys)
+        // get input for movement (WASD or arrow keys)
         float dirX = Input.GetAxis("Horizontal");
         float dirY = Input.GetAxis("Vertical");
 
-        // Calculate movement direction
+        // calculate movement direction
         Vector2 dir = new Vector2(dirX, dirY);
 
-        // Apply movement
+        //appply movement
         rb.velocity = dir * moveSpeed;
+
+
     }
 }
