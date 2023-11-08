@@ -15148,7 +15148,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7014955909605759287, guid: ba14995d358f95846b2c1cf752489594, type: 3}
       propertyPath: m_Name
-      value: Grid
+      value: Grid(Nick)
       objectReference: {fileID: 0}
     - target: {fileID: 8365291063063580738, guid: ba14995d358f95846b2c1cf752489594, type: 3}
       propertyPath: m_LocalPosition.x
