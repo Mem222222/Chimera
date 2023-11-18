@@ -6,7 +6,7 @@ public class NewBehaviourScript : MonoBehaviour
 {
     // Definitions
     public float moveSpeed = 5.0f;
-
+    public bool controlFreeze;
     private Rigidbody2D rb;
 
     // Start is called before the first frame update
@@ -26,8 +26,13 @@ public class NewBehaviourScript : MonoBehaviour
         Vector2 dir = new Vector2(dirX, dirY);
 
         //appply movement
-        rb.velocity = dir * moveSpeed;
-
-
+        if (controlFreeze != true)
+        {
+            rb.velocity = dir * moveSpeed;
+        }
+        if (controlFreeze == true)
+        {
+            rb.velocity = dir * moveSpeed * 0;
+        }
     }
 }
