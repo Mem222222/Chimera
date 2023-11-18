@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Flashlight : MonoBehaviour
 {
-    public Transform player;         // Reference to your player's Transform.
-    public Light flashlight;         // Reference to the Light component.
+    public Transform player;         
+    public Light flashlight;         
     public float rotationSpeed = 5.0f;
     public float maxBatteryTime = 30.0f;
 
@@ -33,27 +33,27 @@ public class Flashlight : MonoBehaviour
 
         if (isFlashlightOn)
         {
-            // Get the mouse position in screen coordinates.
+            
             Vector3 mousePosition = Input.mousePosition;
 
-            // Convert the mouse position from screen coordinates to world coordinates.
+            
             mousePosition.z = Vector3.Distance(player.position, Camera.main.transform.position);
             Vector3 targetPosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
-            // Calculate the direction to the target position.
+            
             Vector3 direction = targetPosition - transform.position;
-            direction.z = 0; // Lock rotation to the y-axis only.
+            direction.z = 0; 
 
-            // Calculate the rotation to look at the target position.
+            
             Quaternion targetRotation = Quaternion.LookRotation(direction);
 
-            // Smoothly interpolate between the current rotation and the target rotation.
+            
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
-            // Update the battery time.
+            //uupdate the battery time.
             currentBatteryTime += Time.deltaTime;
 
-            // Check if the flashlight should turn off automatically.
+            //if the flashlight should turn off automatically.
             if (currentBatteryTime >= maxBatteryTime)
             {
                 ToggleFlashlight();
@@ -80,7 +80,7 @@ public class Flashlight : MonoBehaviour
     }
     private void OnGUI()
     {
-        // Display battery level on screen.
+        //battery level on screen.
         float batteryLevel = Mathf.Clamp01(1 - currentBatteryTime / maxBatteryTime);
         GUI.Label(new Rect(10, 10, 150, 20), "Battery Level: " + batteryLevel.ToString("P0"));
     }
