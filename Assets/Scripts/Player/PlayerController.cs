@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NewBehaviourScript : MonoBehaviour
 {
@@ -33,6 +34,13 @@ public class NewBehaviourScript : MonoBehaviour
         if (controlFreeze == true)
         {
             rb.velocity = dir * moveSpeed * 0;
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "AI")
+        {
+            SceneManager.LoadScene("Game Over");
         }
     }
 }
