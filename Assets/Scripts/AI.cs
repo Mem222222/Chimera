@@ -8,6 +8,10 @@ public class AI : MonoBehaviour
     public float speed = 1.0f;
     bool seeking = false;
 
+    private void Start()
+    {
+        target = GameObject.FindWithTag("Player");
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         seeking = true;

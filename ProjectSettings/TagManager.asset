@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Area_Tag
   - NPC
+  - AI
   layers:
   - Default
   - TransparentFX
