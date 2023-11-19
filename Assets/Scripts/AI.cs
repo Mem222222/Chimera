@@ -10,15 +10,18 @@ public class AI : MonoBehaviour
     public float speed = 1.0f;
     static public bool seeking = false;
     static public bool fleeing = false;
+    private bool isawake = false;
  
     private void Start()
     {
         target = GameObject.FindWithTag("Player");
     }
   private void OnTriggerStay2D(Collider2D collision)
-  {
-      seeking = true;
- 
+  { if(collision.gameObject.tag == "Player")
+        {   
+            seeking = true;
+        }
+      
   }
  
     private void OnTriggerExit2D(Collider2D collision)
