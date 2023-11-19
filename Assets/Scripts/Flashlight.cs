@@ -9,6 +9,7 @@ public class Flashlight : MonoBehaviour
     public float maxBatteryTime = 30.0f;
     public float batteryLevelOn;
     public float batteryLevelOff;
+    static public bool triggerOn;
    
     private bool isFlashlightOn = false;
     private float currentBatteryTime = 0.0f;
@@ -17,12 +18,14 @@ public class Flashlight : MonoBehaviour
 
     private void Start()
     {
+       
         flashlight.enabled = false;
         
     }
 
     private void Update()
     {
+        triggerOn = isFlashlightOn;
         batteryLevelOn = Mathf.Clamp01(1 - currentBatteryTime / maxBatteryTime);
         batteryLevelOff = Mathf.Clamp01(1 - currentCooldownTime / maxBatteryTime);
 
@@ -78,7 +81,7 @@ public class Flashlight : MonoBehaviour
         }
     }
 
-    private void ToggleFlashlight()
+     private void ToggleFlashlight()
     {
         if (isFlashlightOn)
         {
@@ -102,5 +105,6 @@ public class Flashlight : MonoBehaviour
         //batteryLevel = Mathf.Clamp01(1 - currentBatteryTime / maxBatteryTime);
         //GUI.Label(new Rect(10, 10, 150, 20), "Battery Level: " + batteryLevel.ToString("P0"));
     }
+    
 }
 
