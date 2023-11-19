@@ -15,11 +15,7 @@ public class AI : MonoBehaviour
     {
         target = GameObject.FindWithTag("Player");
     }
-  private void OnTriggerEnter2D(Collider2D collision)
-  {
-      Awake();
-  }
-  private void Awake()
+  private void OnTriggerStay2D(Collider2D collision)
   {
       seeking = true;
  
