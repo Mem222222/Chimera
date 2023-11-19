@@ -283,7 +283,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d865c5a605d7774087f69693357695d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DisScene: 1
+  sceneToLoad: 1
+  playerPos: {x: 0, y: 0}
+  storedPos: {fileID: 0}
 --- !u!82 &86443594
 AudioSource:
   m_ObjectHideFlags: 0

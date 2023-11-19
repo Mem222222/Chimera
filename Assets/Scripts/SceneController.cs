@@ -12,8 +12,12 @@ public class SceneController : MonoBehaviour
     public void SwitchScene()
     {   StartCoroutine(DelayedAction());
     }
+
     IEnumerator DelayedAction()
-    {
+    {   if (SceneManager.GetActiveScene().name == "Title")
+        {
+            DisScene = "Intro";
+        }
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(DisScene);
     }
