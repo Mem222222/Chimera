@@ -5,7 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
-    public int DisScene = 1;
+    public string sceneToLoad;
+    public Vector2 playerPos;
+    public VectorValue storedPos;
+    static public string DisScene;
     public void SwitchScene()
     {   StartCoroutine(DelayedAction());
     }
@@ -14,6 +17,7 @@ public class SceneController : MonoBehaviour
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(DisScene);
     }
+    
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape)) //Closes the game mid-gameplay
@@ -29,5 +33,6 @@ public class SceneController : MonoBehaviour
             SceneManager.LoadScene("Level 1");
         }
     }
-
+    
+    
 }

@@ -168,8 +168,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 982ff385ee6b00d49a5fa538859931ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Battery_lvl_txt: {fileID: 0}
   player: {fileID: 1790025081}
+  flashlight: {fileID: 0}
   rotationSpeed: 60
+  maxBatteryTime: 30
+  batteryLevelOn: 0
+  batteryLevelOff: 0
 --- !u!108 &16566749
 Light:
   m_ObjectHideFlags: 0
@@ -232,6 +237,63 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1001 &1015014063
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4275657155381503979, guid: 72234b6c39a656547b9a06f9f24b503f, type: 3}
+      propertyPath: m_Name
+      value: OnStart
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931749685713811946, guid: 72234b6c39a656547b9a06f9f24b503f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.9475522
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931749685713811946, guid: 72234b6c39a656547b9a06f9f24b503f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.8293595
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931749685713811946, guid: 72234b6c39a656547b9a06f9f24b503f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.6857583
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931749685713811946, guid: 72234b6c39a656547b9a06f9f24b503f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931749685713811946, guid: 72234b6c39a656547b9a06f9f24b503f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931749685713811946, guid: 72234b6c39a656547b9a06f9f24b503f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931749685713811946, guid: 72234b6c39a656547b9a06f9f24b503f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931749685713811946, guid: 72234b6c39a656547b9a06f9f24b503f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931749685713811946, guid: 72234b6c39a656547b9a06f9f24b503f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931749685713811946, guid: 72234b6c39a656547b9a06f9f24b503f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 72234b6c39a656547b9a06f9f24b503f, type: 3}
 --- !u!1 &1790025074
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,7 +375,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d865c5a605d7774087f69693357695d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DisScene: 1
+  sceneToLoad: 
+  playerPos: {x: 0, y: 0}
+  storedPos: {fileID: 0}
 --- !u!114 &1790025078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4667,3 +4731,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 1790025081}
   - {fileID: 6838598189911150877}
+  - {fileID: 1015014063}
