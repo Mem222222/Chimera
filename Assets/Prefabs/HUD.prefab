@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 229518271446720372}
   - component: {fileID: 6971395692288864621}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Battery Counter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
