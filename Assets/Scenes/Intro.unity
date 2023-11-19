@@ -6758,6 +6758,10 @@ PrefabInstance:
       propertyPath: m_SpotAngle
       value: 61.7
       objectReference: {fileID: 0}
+    - target: {fileID: 467363173036726100, guid: c603a90cea27cb64b8dd396626d2ae30, type: 3}
+      propertyPath: moveSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1011286963799337107, guid: c603a90cea27cb64b8dd396626d2ae30, type: 3}
       propertyPath: m_Name
       value: Capsule
