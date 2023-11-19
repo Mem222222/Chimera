@@ -18,7 +18,7 @@ public class Flashlight : MonoBehaviour
 
     private void Start()
     {
-        AI.fleeing = true;
+       
         flashlight.enabled = false;
         
     }

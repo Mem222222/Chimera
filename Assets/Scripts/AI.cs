@@ -33,9 +33,16 @@ public class AI : MonoBehaviour
     {
         float dt = Time.deltaTime;
         if (seeking)
+        {
             transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * dt);
+        }
+            
         if (fleeing)
+        {
             transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed* dt * -1);
+            seeking = false;
+
+        }
 
     }
 }
