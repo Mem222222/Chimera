@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3362851759977048253}
   - component: {fileID: 1336755296123426528}
   - component: {fileID: 6171942346058541055}
+  - component: {fileID: 5238796844121815310}
   m_Layer: 0
   m_Name: BadGuy
   m_TagString: AI
@@ -199,3 +200,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5238796844121815310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7043075637936135502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 844e10cdab73b0a45bcd5de22103c7d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enmyhealth: 100
