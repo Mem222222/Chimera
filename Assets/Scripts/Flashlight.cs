@@ -10,7 +10,12 @@ public class Flashlight : MonoBehaviour
     public float batteryLevelOn;
     public float batteryLevelOff;
     static public bool triggerOn;
-   
+
+    public AudioSource source;
+    public AudioClip on;
+    public AudioClip off;
+
+
     private bool isFlashlightOn = false;
     private float currentBatteryTime = 0.0f;
     private float currentCooldownTime = 0.0f;
@@ -85,7 +90,7 @@ public class Flashlight : MonoBehaviour
     {
         if (isFlashlightOn)
         {
-            
+            source.PlayOneShot(off);
             isFlashlightOn = false;
             flashlight.enabled = false; //turrn off light
             currentCooldownTime = currentBatteryTime; // cooldown time based on the duration the flashlight was on.
@@ -94,7 +99,7 @@ public class Flashlight : MonoBehaviour
         }
         else
         {
-            
+            source.PlayOneShot(on);
             isFlashlightOn = true;
             flashlight.enabled = true; //activate light
         }
