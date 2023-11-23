@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: darker shader
-  m_Shader: {fileID: -6465566751694194690, guid: 836eaa8d12ecc9249a511ee9f52e0cfb, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 9334c2c38c1b4274f9e8b7a64b1d432e, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
