@@ -6,11 +6,14 @@ using UnityEngine;
 public class DoorController : MonoBehaviour
 {
     public GameObject Door;
+    public GameObject DoorLight;
 
     public AudioClip Open;
     public AudioClip Denied;
     public AudioClip Closed;
     public AudioSource source;
+
+    private bool isDoorActive = true;
 
     private void OnTriggerEnter2D (Collider2D collision)
     {
@@ -20,6 +23,8 @@ public class DoorController : MonoBehaviour
             Stats statsScript = collision.gameObject.GetComponent<Stats>();
             if (statsScript.keycardLevel >= 1)
             {
+                isDoorActive = false;
+
                 source.PlayOneShot(Open);
                 Debug.Log("Door opened");
                 Door.SetActive(false);
@@ -28,16 +33,19 @@ public class DoorController : MonoBehaviour
             {
                 source.PlayOneShot(Denied);
                 Debug.Log("Player does not have the required keycard level to open the door");
+                DoorLight.SetActive(true);
             }
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        DoorLight.SetActive(false);
+        if (collision.gameObject.tag == "Player" && !isDoorActive)
         {
-            Debug.Log("door");
+            isDoorActive = true;
+            Debug.Log("door closed");
             Door.SetActive(true);
-
+            source.PlayOneShot(Closed);
         }
     }
 }
