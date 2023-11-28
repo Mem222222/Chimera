@@ -10,6 +10,8 @@ public class DoorController : MonoBehaviour
 
     public AudioClip Open;
     public AudioClip Denied;
+    public AudioClip DoorLightOn;
+    public AudioClip DoorLightOff;
     public AudioClip Closed;
     public AudioSource source;
 
@@ -18,7 +20,7 @@ public class DoorController : MonoBehaviour
     private void OnTriggerEnter2D (Collider2D collision)
     {
         
-        if (collision.gameObject.tag == "Player") 
+        if (collision.gameObject.tag == "Player")
         {
             Stats statsScript = collision.gameObject.GetComponent<Stats>();
             if (statsScript.keycardLevel >= 1)
@@ -31,6 +33,7 @@ public class DoorController : MonoBehaviour
             }
             else
             {
+                source.PlayOneShot(DoorLightOn);
                 source.PlayOneShot(Denied);
                 Debug.Log("Player does not have the required keycard level to open the door");
                 DoorLight.SetActive(true);
@@ -40,6 +43,8 @@ public class DoorController : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         DoorLight.SetActive(false);
+        source.PlayOneShot(DoorLightOff);
+
         if (collision.gameObject.tag == "Player" && !isDoorActive)
         {
             isDoorActive = true;
