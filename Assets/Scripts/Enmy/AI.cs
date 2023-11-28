@@ -8,8 +8,8 @@ public class AI : MonoBehaviour
 {
     public GameObject target;
     public float speed = 1.0f;
-    static public bool seeking = false;
-    static public bool fleeing = false;
+    public bool seeking = false;
+    public bool fleeing = false;
     private bool isawake = false;
  
     private void Start()
