@@ -8,6 +8,7 @@ TagManager:
   - NPC
   - AI
   - Flashlight
+  - Keycard
   layers:
   - Default
   - TransparentFX
