@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1336755296123426528}
   - component: {fileID: 6171942346058541055}
   - component: {fileID: 5238796844121815310}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BadGuy
   m_TagString: AI
   m_Icon: {fileID: 0}
@@ -103,6 +103,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   speed: 4
+  seeking: 0
+  fleeing: 0
 --- !u!58 &3362851759977048253
 CircleCollider2D:
   m_ObjectHideFlags: 0

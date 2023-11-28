@@ -17,19 +17,21 @@ public class lightTrigger : MonoBehaviour
 // }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (Flashlight.triggerOn == true && collision.gameObject.tag == "AI")
-        {
-            AI.fleeing = true;
-            AI.seeking = false;
+        AI myai = collision.GetComponent<AI>();
+        if (Flashlight.triggerOn == true && myai != null)
+        {   
+            myai.fleeing = true;
+            myai.seeking = false;
         }
 
 
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "AI")
+        AI myai = collision.GetComponent<AI>();
+        if (myai != null)
         {
-            AI.fleeing = false;
+            myai.fleeing = false;
         }
 
 
